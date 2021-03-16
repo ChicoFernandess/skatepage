@@ -1,0 +1,266 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+main{
+    font-family: 'Syne Mono', monospace;
+}
+
+.landing {
+    min-height: 100vh;
+    background: url(./skate.jpg);
+    background-size: cover;         /*se a imagem for pequena demais e repetir a propria imagem usamos cover */
+    padding: 0rem 5rem;      /*estou a adicionar 0 de padding ao top e bottom mas a adicionar 5 à direita e esquerda movendo todos os items contidos na landing para a direita ou esquerda */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 10vh;     /* para descer um pouco a navbar */
+}
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+.nav-links li{
+    padding-left: 10rem;     /* espaço entre os li itens da navbar */
+    font-size: 1.2rem;
+}
+h1.logo{
+    font-family: 'Russo One', sans-serif;
+    font-size: 30px;
+}
+
+.big-text{
+    position: absolute;    /* aboslute podemos movimentar o texto para onde quisermos */
+    top:30%;
+    left:50%;
+    transform: translate(-50%, -30%); /* sem isto o texto começa no centro mas depois continua e por isso nao dá a ideia de estar centrado com este transform ja dá */
+    font-size: 5rem;
+    animation: fadeIn 2s linear;
+    animation-delay: 3.7s;
+    opacity: 0;
+    animation-fill-mode: forwards;    /* para que a animacao termine e fique com a ultima animacao que fez neste caso opacity 1 */
+    color: rgb(39, 37, 37)
+}
+@keyframes fadeIn{
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+        
+    }
+}
+
+img.guy {
+    width: 5%;
+    height: 5%;
+    position: absolute;
+    left: -6%;
+    top: 35%;
+    overflow: hidden;
+    animation: animate 2s linear;
+    overflow: hidden;
+    animation-delay: 2.5s;
+}
+
+@keyframes animate {
+    from {
+           left: -6%;
+    }
+
+    to {
+           left: 60%;
+    }
+}
+
+
+.intro {
+    background:rgb(34, 33, 33);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.intro-text {
+    color:rgb(209, 209, 209);
+    font-family: 'Syne Mono', monospace;
+    font-size: 3rem;
+}
+
+.slider {
+    background:rgb(48, 47, 46);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateY(100%);   /* translate y para no eixo do y puxar para baixo 100% */
+    
+}
+
+.hide{
+    background:rgb(34, 33, 33);
+    overflow: hidden;
+}
+.hide span{
+    transform: translateY(100%);
+    display: inline-block;    /* span é algo qeu esta sempre em linha logo temos de pegar no bloco e puxar para baixo*/
+
+}
+
+/* section2*/
+
+section.sec2{
+    background-color: rgb(199, 189, 189);
+    width: 100%;
+    position: relative;
+}
+
+section.sec2 .container{
+    padding: 3rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+section.sec2 .container > * {
+    margin: 3rem;
+}
+
+
+section.sec2 img{
+    width: 100%;
+}
+
+h1.about {
+    position: relative;
+    font-size: 60px;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+.border{
+    position: absolute;
+    width: 30%;
+    height: 3px;
+    background-color: black;
+    bottom: 0;
+    left: 0;
+}
+
+/* shadow entre a primeira section e a segunda
+posso aumentar o height para aumentar a sombra para cima 
+(pus a mesma cor que a section2 para parecer seguido)*/
+.shadow{
+    position: absolute;
+    bottom: 100%;
+    height: 300px;
+    width: 100%;
+    left: 0;
+    z-index: 20;
+    background: linear-gradient(to top, rgb(199,189,189), transparent);
+}
+
+section.sec3 .contact {
+    background: url(./skatecontact.jpg) center;
+    background-size: cover;
+    padding: 130px;
+    opacity: 0.8;
+}
+
+section.sec3 h1 {
+    text-align: center;
+    font-size: 3rem;
+}
+
+.border2{
+    width: 100px;
+    height: 10px;
+    background: #1c1c1d;
+    margin: 40px auto;
+    border-radius: 10px;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: auto;
+    padding: 0px 10px;
+    overflow: hidden;
+}
+
+.contact-form-text {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 16px 0;
+    border: 0;
+    background: #111;
+    padding: 20px 40px;
+    outline: none;
+    color: #ddd;
+    transition: 0.5s;
+}
+.contact-form-text:hover{
+   box-shadow: 0 0 10px 4px  rgb(199, 189, 189);
+}
+textarea.contact-form-text {
+    resize: none;
+    height: 120px;
+}
+
+.contact-form-btn{
+    float: right;
+    border: 0;
+    background: #1c1c1d;
+    color:rgb(199, 189, 189);
+    padding: 12px 50px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.5s;   
+}
+.contact-form-btn:hover{
+    background: #2d2d2e;
+}
+
+
+.shadow2{
+    position: absolute;
+    bottom: -128%;
+    height: 300px;
+    width: 100%;
+    left: 0;
+    z-index: 20;
+    background: linear-gradient(to bottom, rgb(199,189,189), transparent);
+}
+
+.cool-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: rgb(41, 40, 40);
+    transition: width .3s;
+}
+
+.cool-link:hover::after {
+    width: 100%;
+    transition: width .3s;
+}
+
+
